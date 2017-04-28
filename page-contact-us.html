@@ -73,7 +73,7 @@
           -->
 <div id="map" style="width:100%;height:350px;"></div>
 
-<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=발급받은 API KEY를 사용하세요&libraries=services"></script>
+<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=20461028b33bba50a6e00cc0bf384743&libraries=services"></script>
 <script>
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div
     mapOption = {
@@ -87,7 +87,7 @@ var map = new daum.maps.Map(mapContainer, mapOption);
 // 주소-좌표 변환 객체를 생성합니다
 var geocoder = new daum.maps.services.Geocoder();
 
-var coords = new daum.maps.LatLng(37.5451934419, result.addr[0].lng);
+var coords = new daum.maps.LatLng(37.5451934419, 127.057819136);
 
 // 결과값으로 받은 위치를 마커로 표시합니다
 var marker = new daum.maps.Marker({
