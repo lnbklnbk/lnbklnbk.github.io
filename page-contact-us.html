@@ -24,7 +24,7 @@
 <body>
 <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]--> 
+        <![endif]-->
 
 <!-- Navigation & Logo-->
 <div class="mainmenu-wrapper">
@@ -66,19 +66,54 @@
 <div class="section">
   <div class="container">
     <div class="row">
-      <div class="col-sm-7"> 
+      <div class="col-sm-7">
         <!-- Map -->
+        <!--
         <div id="contact-us-map"> </div>
-        <!-- End Map --> 
+          -->
+<div id="map" style="width:100%;height:350px;"></div>
+
+<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=발급받은 API KEY를 사용하세요&libraries=services"></script>
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+    mapOption = {
+        center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };
+
+// 지도를 생성합니다
+var map = new daum.maps.Map(mapContainer, mapOption);
+
+// 주소-좌표 변환 객체를 생성합니다
+var geocoder = new daum.maps.services.Geocoder();
+
+var coords = new daum.maps.LatLng(37.5451934419, result.addr[0].lng);
+
+// 결과값으로 받은 위치를 마커로 표시합니다
+var marker = new daum.maps.Marker({
+    map: map,
+    position: coords
+});
+
+// 인포윈도우로 장소에 대한 설명을 표시합니다
+var infowindow = new daum.maps.InfoWindow({
+    content: '<div style="width:150px;text-align:center;padding:6px 0;">LNBK</div>'
+});
+infowindow.open(map, marker);
+
+// 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+map.setCenter(coords);
+</script>
+        <!-- End Map -->
         <!-- Contact Info -->
         <p class="contact-us-details">- Address : 서울특별시 성동구 성수동2가 277-17 성수아카데미타워 907호
 <br/>
           - Phone : 02 6925 0125<br/>
           - Fax : 02 6442 2581<br/>
           - Email : <a href="mailto:marster@lnbk.co.kr">marster@lnbk.co.kr</a> </p>
-        <!-- End Contact Info --> 
+        <!-- End Contact Info -->
       </div>
-      <div class="col-sm-5"> 
+      <div class="col-sm-5">
         <!-- Contact Form -->
         <h3>상담하실 내용을 보내주세요.</h3>
         <div class="contact-form-wrapper">
@@ -127,7 +162,7 @@
             </div>
           </form>
         </div>
-        <!-- End Contact Info --> 
+        <!-- End Contact Info -->
       </div>
     </div>
   </div>
@@ -164,15 +199,15 @@
   </div>
 </div>
 
-<!-- Javascripts --> 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
-<script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script> 
-<script src="js/bootstrap.min.js"></script> 
-<script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script> 
-<script src="js/jquery.fitvids.js"></script> 
-<script src="js/jquery.sequence-min.js"></script> 
-<script src="js/jquery.bxslider.js"></script> 
-<script src="js/main-menu.js"></script> 
+<!-- Javascripts -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="js/bootstrap.min.js"></script>
+<script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
+<script src="js/jquery.fitvids.js"></script>
+<script src="js/jquery.sequence-min.js"></script>
+<script src="js/jquery.bxslider.js"></script>
+<script src="js/main-menu.js"></script>
 <script src="js/template.js"></script>
 </body>
 </html>
